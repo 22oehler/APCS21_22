@@ -2,9 +2,15 @@ import java.util.Locale;
 
 /**
  * Roman to decimal will convert roman numerals to numbers
+ * @version 10/3/21
  * @author 22oehler
  */
 public class RomanToDecimal {
+    /**
+     * RomanToDecimal is what sets the decimal
+     * @param roman numeral
+     * @return value of decimal
+     */
     public static int romanToDecimal(String roman){
         int decimal = 0;
         roman = roman.toUpperCase();
@@ -27,7 +33,7 @@ public class RomanToDecimal {
                 return -1;
             }
         }
-        //at this point raw point value is accurate
+        //at this raw point value is accurate
         if(roman.indexOf("IV") != -1)
             decimal -= 2;
         if(roman.indexOf("IX") != -1)
@@ -42,6 +48,11 @@ public class RomanToDecimal {
             decimal -= 200;
         return decimal;
     }
+
+    /**
+     * main entry point
+     * @param args roman numerals, or invalid input
+     */
     public static void main(String[] args){
         for(String temp : args) {
             int val = romanToDecimal(temp);
